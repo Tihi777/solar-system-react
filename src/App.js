@@ -1,8 +1,7 @@
 import React from 'react';
+import MainPage from './pages/MainPage/MainPage';
 import './App.scss';
 
-function App() {
-  return <div className="App" />;
-}
+const App = () => <MainPage />;
 
 export default App;
