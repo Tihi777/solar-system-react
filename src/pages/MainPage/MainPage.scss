@@ -1,0 +1,50 @@
+@import '../../static/styles/vars.scss';
+
+.main-page {
+  background: url('../../static/images/main-page-background.jpg') no-repeat center center fixed;
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+  user-select: none;
+  display: flex;
+  justify-content: center;
+
+  &__content {
+    padding-left: 200px;
+    padding-right: 200px;
+    padding-top: 15vh;
+  }
+
+  &__bottom {
+    display: flex;
+  }
+
+  &__title {
+    font-size: 100px;
+    font-weight: 600;
+    color: $white;
+    margin-bottom: 50px;
+  }
+
+  &__subtitle {
+    flex: 1;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 600;
+    color: $white;
+  }
+
+  &__button {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .MuiButton-root {
+    font-weight: 600;
+    height: 50px;
+    color: $white;
+    border-color: $white;
+  }
+}
