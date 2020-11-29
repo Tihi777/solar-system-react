@@ -1,7 +1,7 @@
 import React from 'react';
-import MainPage from './pages/MainPage/MainPage';
 import './App.scss';
+import SolarSystem from './pages/SolarSystem/SolarSystem';
 
-const App = () => <MainPage />;
+const App = () => <SolarSystem />;
 
 export default App;
