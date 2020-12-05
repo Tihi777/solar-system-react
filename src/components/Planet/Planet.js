@@ -1,8 +1,10 @@
 import React, { useEffect, useRef } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { DoubleSide, TextureLoader } from 'three';
 import { useFrame } from 'react-three-fiber';
 
 import { fragmentShader, vertexShader } from '../../shaders/saturnRingShaders';
+import PlanetActions from '../../store/actions/planetActions';
 
 import PlanetOrbit from '../PlanetOrbit/PlanetOrbit';
 
@@ -15,15 +17,11 @@ const Planet = ({
     size,
     amountOfSegments,
   },
-  orbitDate: {
-    runRotation,
-    runOrbit,
-    value,
-  },
   position,
-  onPlanetRefSet,
 }) => {
   const planetRef = useRef();
+  const dispatch = useDispatch();
+  const { runRotation, runOrbit, speedRate } = useSelector(state => state.orbitState);
   const texture = new TextureLoader().load(`textures/${name}.jpg`);
   let planetPositionIndex = 0;
   let normalMap;
@@ -37,7 +35,7 @@ const Planet = ({
   }
 
   useEffect(() => {
-    onPlanetRefSet(prevState => ({ ...prevState, [name]: planetRef }));
+    dispatch(PlanetActions.addPlanet(planetRef));
   }, []);
 
   useFrame(() => {
@@ -46,14 +44,13 @@ const Planet = ({
       if (cloudsRef) cloudsRef.current.rotation.y += rotationRate + 0.008;
     }
 
-    planetPositionIndex += 1;
     if (runOrbit) {
       planetRef.current.position.x = Math.cos(
-        planetPositionIndex * (orbitRate / 500) * value,
+        (planetPositionIndex += 1) * (orbitRate / 500) * speedRate,
       ) * distanceFromSun;
 
       planetRef.current.position.z = 1.2 * Math.sin(
-        planetPositionIndex * (orbitRate / 500) * value,
+        planetPositionIndex * (orbitRate / 500) * speedRate,
       ) * distanceFromSun;
 
       if (saturnRingsRef) {

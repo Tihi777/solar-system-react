@@ -1,7 +1,7 @@
 const MOONS = [
   {
     name: 'moon',
-    planet: 'earth',
+    planetIndex: 2,
     orbitRate: 10,
     rotationRate: 0.02,
     distanceFromSun: 4,
@@ -10,7 +10,7 @@ const MOONS = [
   },
   {
     name: 'phobos',
-    planet: 'mars',
+    planetIndex: 3,
     orbitRate: 10,
     rotationRate: 0.02,
     distanceFromSun: 2,
@@ -19,7 +19,7 @@ const MOONS = [
   },
   {
     name: 'deimos',
-    planet: 'mars',
+    planetIndex: 3,
     orbitRate: 10,
     rotationRate: 0.02,
     distanceFromSun: 2.8,
