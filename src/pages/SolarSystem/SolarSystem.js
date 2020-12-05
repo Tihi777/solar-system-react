@@ -9,6 +9,7 @@ import SkyBox from '../../components/SkyBox/SkyBox';
 import Sun from '../../components/Sun/Sun';
 import Planet from '../../components/Planet/Planet';
 import Moon from '../../components/Moon/Moon';
+import Loader from '../../components/Loader/Loader';
 
 const SolarSystem = () => {
   const [orbitState, setOrbitState] = useState({
@@ -22,17 +23,14 @@ const SolarSystem = () => {
   });
 
   return (
-    <Canvas
-      shadowMap
-      camera={{ position: [120, 30, 0], fov: 70 }}
-      colorManagement
-    >
-      <Suspense fallback={null}>
-        <ambientLight intensity={0.3} color={0xaaaaaa} />
-        <pointLight position={[0, 0, 0]} intensity={2.5} color={0xffdcb4} />
-        <Sun />
-        {
-          PLANETS.map(planet => (
+    <>
+      <Loader />
+      <Canvas shadowMap camera={{ position: [120, 30, 0], fov: 70 }} colorManagement>
+        <Suspense fallback={null}>
+          <ambientLight intensity={0.3} color={0xaaaaaa} />
+          <pointLight position={[0, 0, 0]} intensity={2.5} color={0xffdcb4} />
+          <Sun />
+          {PLANETS.map(planet => (
             <Planet
               key={planet.name}
               planetData={planet}
@@ -40,10 +38,8 @@ const SolarSystem = () => {
               orbitDate={orbitState}
               onPlanetRefSet={setPlanetsRef}
             />
-          ))
-        }
-        {
-          MOONS.map(moon => (
+          ))}
+          {MOONS.map(moon => (
             <Moon
               key={moon.name}
               moonData={moon}
@@ -51,12 +47,12 @@ const SolarSystem = () => {
               position={[moon.distanceFromSun, 0, 0]}
               orbitDate={orbitState}
             />
-          ))
-        }
-        <SkyBox />
-        <OrbitControls maxDistance={1000} minDistance={10} />
-      </Suspense>
-    </Canvas>
+          ))}
+          <SkyBox />
+          <OrbitControls maxDistance={1000} minDistance={10} />
+        </Suspense>
+      </Canvas>
+    </>
   );
 };
 

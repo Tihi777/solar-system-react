@@ -15,6 +15,7 @@ module.exports = {
   rules: {
     'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
     'react/prop-types': 'off',
+    'react/destructuring-assignment': 'off',
 
     'arrow-parens': ['error', 'as-needed'],
     'no-unused-vars': 'warn',
@@ -22,6 +23,7 @@ module.exports = {
     'no-return-assign': 'off',
     'no-multi-assign': 'off',
     'object-curly-newline': 'off',
-
+    'no-shadow': 'off',
+    'prefer-const': 'off',
   },
 };
