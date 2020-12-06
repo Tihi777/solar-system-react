@@ -10,6 +10,8 @@ function orbitReducer(state = defaultState, { type, value }) {
   switch (type) {
     case OrbitActionTypes.CHANGE_SPEED:
       return { ...state, speedRate: value };
+    case OrbitActionTypes.SET_ORBIT:
+      return { ...state, runOrbit: !state.runOrbit };
     default:
       return state;
   }

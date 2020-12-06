@@ -1,3 +1,12 @@
+import mercury from '../static/textures/mercury.jpg';
+import venus from '../static/textures/venus.jpg';
+import earth from '../static/textures/earth.jpg';
+import mars from '../static/textures/mars.jpg';
+import jupiter from '../static/textures/jupiter.jpg';
+import saturn from '../static/textures/saturn.jpg';
+import uranus from '../static/textures/uranus.jpg';
+import neptune from '../static/textures/neptune.jpg';
+
 const PLANETS = [
   {
     name: 'mercury',
@@ -6,6 +15,7 @@ const PLANETS = [
     distanceFromSun: 13,
     size: 1,
     amountOfSegments: 100,
+    mapURI: mercury,
   },
   {
     name: 'venus',
@@ -14,6 +24,7 @@ const PLANETS = [
     distanceFromSun: 23,
     size: 2.2,
     amountOfSegments: 100,
+    mapURI: venus,
   },
   {
     name: 'earth',
@@ -22,6 +33,7 @@ const PLANETS = [
     distanceFromSun: 30,
     size: 2.5,
     amountOfSegments: 100,
+    mapURI: earth,
   },
   {
     name: 'mars',
@@ -30,6 +42,7 @@ const PLANETS = [
     distanceFromSun: 38,
     size: 1.5,
     amountOfSegments: 100,
+    mapURI: mars,
   },
   {
     name: 'jupiter',
@@ -38,6 +51,7 @@ const PLANETS = [
     distanceFromSun: 60,
     size: 4.2,
     amountOfSegments: 100,
+    mapURI: jupiter,
   },
   {
     name: 'saturn',
@@ -46,6 +60,7 @@ const PLANETS = [
     distanceFromSun: 75,
     size: 3.7,
     amountOfSegments: 100,
+    mapURI: saturn,
   },
   {
     name: 'uranus',
@@ -54,6 +69,7 @@ const PLANETS = [
     distanceFromSun: 88,
     size: 2.2,
     amountOfSegments: 100,
+    mapURI: uranus,
   },
   {
     name: 'neptune',
@@ -62,6 +78,7 @@ const PLANETS = [
     distanceFromSun: 100,
     size: 2.2,
     amountOfSegments: 100,
+    mapURI: neptune,
   },
 ];
 

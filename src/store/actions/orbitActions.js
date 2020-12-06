@@ -1,5 +1,6 @@
 export const OrbitActionTypes = {
   CHANGE_SPEED: 'CHANGE_SPEED',
+  SET_ORBIT: 'SET_ORBIT',
 };
 
 const changeSpeed = value => ({
@@ -7,8 +8,11 @@ const changeSpeed = value => ({
   value,
 });
 
+const setOrbit = () => ({ type: OrbitActionTypes.SET_ORBIT });
+
 const OrbitActions = {
   changeSpeed,
+  setOrbit,
 };
 
 export default OrbitActions;

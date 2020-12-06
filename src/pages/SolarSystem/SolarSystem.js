@@ -11,12 +11,14 @@ import Sun from '../../components/Sun/Sun';
 import Planet from '../../components/Planet/Planet';
 import Moon from '../../components/Moon/Moon';
 import Loader from '../../components/Loader/Loader';
+import SpeedControl from '../../components/SpeedControl/SpeedControl';
 
 const SolarSystem = () => (
   <ReactReduxContext.Consumer>
     {({ store }) => (
       <>
         <Loader />
+        <SpeedControl />
         <Canvas shadowMap camera={{ position: [120, 30, 0], fov: 70 }} colorManagement>
           <Suspense fallback={null}>
             <Provider store={store}>
@@ -27,14 +29,12 @@ const SolarSystem = () => (
                 <Planet
                   key={planet.name}
                   planetData={planet}
-                  position={[planet.distanceFromSun, 0, 0]}
                 />
               ))}
               {MOONS.map(moon => (
                 <Moon
                   key={moon.name}
                   moonData={moon}
-                  position={[moon.distanceFromSun, 0, 0]}
                 />
               ))}
               <SkyBox />
