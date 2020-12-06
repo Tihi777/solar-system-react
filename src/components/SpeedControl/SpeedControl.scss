@@ -1,0 +1,56 @@
+@import "./src/static/styles/vars";
+
+.speed-control {
+  position: absolute;
+  color: #fff;
+  z-index: 30;
+  bottom: 0;
+  left: calc(50% - 175px);
+  width: 350px;
+  padding: 5px;
+
+  &__arrow {
+    position: absolute;
+    bottom: 20px;
+    left: calc(50% - 20px);
+  }
+
+  &__arrow-icon {
+    width: 20px;
+    height: 20px;
+    fill: $indigo;
+  }
+
+  &__panel {
+    background: linear-gradient(45deg, $indigo 30%, #bf3252 90%);
+    border-radius: 25px;
+    padding: 10px 5px;
+    display: flex;
+  }
+
+  &__action {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    width: 100%;
+    margin: 0 5px;
+
+    &--wide {
+      flex: 4;
+    }
+
+  }
+
+  &__root {
+    color: $black;
+  }
+
+  .MuiSlider-track{
+    color: $black;
+  }
+
+  .MuiSlider-rail {
+    color: $grey;
+  }
+}

@@ -1,3 +1,7 @@
+import moon from '../static/textures/moon.jpg';
+import phobos from '../static/textures/phobos.jpg';
+import deimos from '../static/textures/deimos.jpg';
+
 const MOONS = [
   {
     name: 'moon',
@@ -7,6 +11,7 @@ const MOONS = [
     distanceFromSun: 4,
     size: 0.5,
     amountOfSegments: 50,
+    mapURI: moon,
   },
   {
     name: 'phobos',
@@ -16,6 +21,7 @@ const MOONS = [
     distanceFromSun: 2,
     size: 0.2,
     amountOfSegments: 50,
+    mapURI: phobos,
   },
   {
     name: 'deimos',
@@ -25,6 +31,7 @@ const MOONS = [
     distanceFromSun: 2.8,
     size: 0.3,
     amountOfSegments: 50,
+    mapURI: deimos,
   },
 ];
 
