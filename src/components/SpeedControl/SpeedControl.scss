@@ -13,6 +13,11 @@
     position: absolute;
     bottom: 20px;
     left: calc(50% - 20px);
+
+    &:active,
+    &:focus {
+      outline: none;
+    }
   }
 
   &__arrow-icon {
@@ -22,13 +27,14 @@
   }
 
   &__panel {
-    background: linear-gradient(45deg, $indigo 30%, #bf3252 90%);
+    background: linear-gradient(45deg, $indigo 30%, $pink 90%);
     border-radius: 25px;
     padding: 10px 5px;
     display: flex;
   }
 
   &__action {
+    cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -40,17 +46,18 @@
       flex: 4;
     }
 
-  }
+    svg {
+      transition: all .3s ease-out;
+    }
 
-  &__root {
-    color: $black;
-  }
+    svg:hover {
+      fill: $indigo;
+    }
 
-  .MuiSlider-track{
-    color: $black;
-  }
-
-  .MuiSlider-rail {
-    color: $grey;
+    &--pink {
+      svg:hover {
+        fill: $pink;
+      }
+    }
   }
 }

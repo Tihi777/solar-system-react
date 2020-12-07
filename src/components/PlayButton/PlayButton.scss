@@ -1,3 +1,5 @@
+@import "./src/static/styles/vars";
+
 .play-button {
   display: flex;
   justify-content: center;
@@ -6,5 +8,6 @@
   &__icon {
     display: flex;
     align-items: flex-end;
+
   }
 }

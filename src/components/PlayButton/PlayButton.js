@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { animated, useTransition } from 'react-spring';
+
 import { ReactComponent as PlayIcon } from '../../static/svg/play.svg';
 import { ReactComponent as PauseIcon } from '../../static/svg/pause.svg';
+
 import './PlayButton.scss';
 
 const PlayButton = ({ onClick }) => {
   const [state, setState] = useState(false);
-
   const transitions = useTransition(state, null, {
     from: { position: 'absolute', opacity: 0 },
     enter: { opacity: 1 },
@@ -29,12 +30,12 @@ const PlayButton = ({ onClick }) => {
       {
         transitions.map(({ item, key, props }) => (item
           ? (
-            <animated.div className="play-button__icon" style={props}>
+            <animated.div className="play-button__icon" style={props} key={key}>
               <PlayIcon />
             </animated.div>
           )
           : (
-            <animated.div className="play-button__icon" style={props}>
+            <animated.div className="play-button__icon" style={props} key={key}>
               <PauseIcon />
             </animated.div>
           )))
