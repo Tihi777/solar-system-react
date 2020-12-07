@@ -18,6 +18,7 @@ module.exports = {
     'react/destructuring-assignment': 'off',
 
     'arrow-parens': ['error', 'as-needed'],
+    'no-underscore-dangle': ['error', { allow: ['__REDUX_DEVTOOLS_EXTENSION__', '__REDUX_DEVTOOLS_EXTENSION__'] }],
     'no-unused-vars': 'warn',
     'linebreak-style': 'off',
     'no-return-assign': 'off',
