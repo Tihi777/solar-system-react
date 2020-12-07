@@ -4,6 +4,7 @@ const defaultState = {
   runRotation: true,
   runOrbit: true,
   speedRate: 1,
+  activeObject: '',
 };
 
 function orbitReducer(state = defaultState, { type, value }) {
@@ -12,6 +13,8 @@ function orbitReducer(state = defaultState, { type, value }) {
       return { ...state, speedRate: value };
     case OrbitActionTypes.SET_ORBIT:
       return { ...state, runOrbit: !state.runOrbit };
+    case OrbitActionTypes.SET_ACTIVE_OBJECT:
+      return { ...state, activeObject: state.activeObject === value ? '' : value };
     default:
       return state;
   }

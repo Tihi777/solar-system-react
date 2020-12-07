@@ -4,7 +4,7 @@ import { useFrame, useLoader } from 'react-three-fiber';
 
 import earthClouds from '../../static/textures/earth-clouds.jpg';
 
-const EarthClouds = ({ size, amountOfSegments, rotationRate }) => {
+const EarthClouds = ({ size, amountOfSegments, rotationRate, onClick }) => {
   const alphaMap = useLoader(TextureLoader, earthClouds);
   const cloudsRef = useRef();
 
@@ -13,7 +13,7 @@ const EarthClouds = ({ size, amountOfSegments, rotationRate }) => {
   });
 
   return (
-    <mesh ref={cloudsRef}>
+    <mesh ref={cloudsRef} onClick={onClick}>
       <sphereGeometry
         attach="geometry"
         args={[size + 0.008, amountOfSegments, amountOfSegments]}

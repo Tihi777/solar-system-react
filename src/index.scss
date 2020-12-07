@@ -1,4 +1,5 @@
 @import './static/styles/fonts.scss';
+@import './static/styles/vars.scss';
 
 html {
   line-height: 1.15;
@@ -181,6 +182,7 @@ template {
 }
 
 #app-root {
+  user-select: none;
   position: relative;
   overflow: hidden;
   height: 100vh;
