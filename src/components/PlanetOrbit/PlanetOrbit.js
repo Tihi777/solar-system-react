@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import { BufferGeometry, EllipseCurve } from 'three';
 
-const PlanetOrbit = ({ distanceFromSun, size }) => {
+const PlanetOrbit = ({ distanceFromSun, size, color }) => {
   const geometry = useMemo(() => {
     const curve = new EllipseCurve(
       0,
@@ -16,11 +16,11 @@ const PlanetOrbit = ({ distanceFromSun, size }) => {
 
     const points = curve.getPoints(size);
     return new BufferGeometry().setFromPoints(points);
-  }, []);
+  }, [size]);
 
   return (
     <line geometry={geometry} rotation={[Math.PI / 2, 0, 0]}>
-      <meshBasicMaterial attach="material" />
+      <meshBasicMaterial attach="material" color={color} />
     </line>
   );
 };
