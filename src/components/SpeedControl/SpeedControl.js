@@ -2,12 +2,29 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { animated, useSpring } from 'react-spring';
 import { Slider } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
+
 import OrbitActions from '../../store/actions/orbitActions';
+
 import { ReactComponent as ArrowUpSvg } from '../../static/svg/up-arrow.svg';
 import { ReactComponent as CloseSvg } from '../../static/svg/close.svg';
 import { ReactComponent as SettingsSvg } from '../../static/svg/settings.svg';
-import './SpeedControl.scss';
+
 import PlayButton from '../PlayButton/PlayButton';
+
+import './SpeedControl.scss';
+
+const useStyles = makeStyles({
+  root: {
+    color: '#bf3252',
+  },
+  track: {
+    color: '#212121',
+  },
+  rail: {
+    color: '#272727',
+  },
+});
 
 const SpeedControl = () => {
   const [speedControlVisible, setSpeedControlVisible] = useState(false);
@@ -19,6 +36,7 @@ const SpeedControl = () => {
   });
 
   const dispatch = useDispatch();
+  const classes = useStyles();
 
   const handlePlayButtonClick = () => {
     dispatch(OrbitActions.setOrbit());
@@ -38,7 +56,7 @@ const SpeedControl = () => {
         <ArrowUpSvg className="speed-control__arrow-icon" />
       </div>
       <animated.div className="speed-control__panel" style={speedControlAnimation}>
-        <div className="speed-control__action">
+        <div className="speed-control__action speed-control__action--pink">
           <PlayButton onClick={handlePlayButtonClick} />
         </div>
         <div className="speed-control__action speed-control__action--wide">
@@ -49,7 +67,7 @@ const SpeedControl = () => {
             value={speed}
             onChange={(_, value) => setSpeed(value)}
             onChangeCommitted={() => dispatch(OrbitActions.changeSpeed(speed))}
-            classes={{ root: 'speed-control__root' }}
+            className={classes.root}
           />
         </div>
         <div className="speed-control__action speed-control__action--settings">
