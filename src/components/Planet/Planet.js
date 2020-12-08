@@ -71,7 +71,7 @@ const Planet = ({
         <meshPhongMaterial
           map={map}
         />
-        {name === 'earth' && (
+        {name === 'Земля' && (
         <EarthClouds
           size={size}
           onClick={() => dispatch(OrbitActions.setActiveObject(name))}
@@ -80,7 +80,7 @@ const Planet = ({
         />
         )}
       </mesh>
-      { name === 'saturn' && (
+      { name === 'Сатурн' && (
       <SaturnRings
         innerRadius={3.85}
         outerRadius={10}

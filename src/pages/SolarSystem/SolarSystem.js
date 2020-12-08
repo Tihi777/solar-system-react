@@ -12,6 +12,8 @@ import Planet from '../../components/Planet/Planet';
 import Moon from '../../components/Moon/Moon';
 import Loader from '../../components/Loader/Loader';
 import SpeedControl from '../../components/SpeedControl/SpeedControl';
+import PlanetCard from '../../components/PlanetCard/PlanetCard';
+import LeftPanel from '../../components/LeftPanel/LeftPanel';
 
 const SolarSystem = () => (
   <ReactReduxContext.Consumer>
@@ -19,6 +21,8 @@ const SolarSystem = () => (
       <>
         <Loader />
         <SpeedControl />
+        <PlanetCard />
+        <LeftPanel />
         <Canvas shadowMap camera={{ position: [120, 30, 0], fov: 70 }} colorManagement>
           <Suspense fallback={null}>
             <Provider store={store}>

@@ -1,0 +1,64 @@
+@import 'src/static/styles/vars';
+
+.encyclopedia {
+  color: $white;
+  height: 100%;
+
+  &__header {
+    text-align: center;
+  }
+
+  &__object-name {
+    font-size: 30px;
+    letter-spacing: 2px;
+    margin-bottom: 3px;
+  }
+
+  &__object-type {
+    font-size: 14px;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title {
+    font-size: 24px;
+    margin: 15px 0;
+  }
+
+  &__row {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    color: $white;
+    font-weight: 500;
+
+    &:nth-child(2n-1) {
+      color: $black;
+    }
+  }
+
+  &__cell {
+    flex: 1 auto;
+    margin-right: 5px;
+
+    &:last-child{
+      display: flex;
+      justify-content: flex-end;
+      flex: 100% 100%;
+      white-space: pre;
+    }
+  }
+
+  &__exponent {
+    font-size: 10px;
+    margin-left: 2px;
+  }
+
+  &__info {
+    margin-top: 20px;
+    line-height: 20px;
+  }
+}

@@ -9,7 +9,7 @@ import neptune from '../static/textures/neptune.jpg';
 
 const PLANETS = [
   {
-    name: 'mercury',
+    name: 'Меркурий',
     orbitRate: 5,
     rotationRate: 0.01,
     distanceFromSun: 13,
@@ -18,7 +18,7 @@ const PLANETS = [
     mapURI: mercury,
   },
   {
-    name: 'venus',
+    name: 'Венера',
     orbitRate: 4,
     rotationRate: 0.02,
     distanceFromSun: 23,
@@ -27,7 +27,7 @@ const PLANETS = [
     mapURI: venus,
   },
   {
-    name: 'earth',
+    name: 'Земля',
     orbitRate: 3,
     rotationRate: 0.02,
     distanceFromSun: 30,
@@ -36,7 +36,7 @@ const PLANETS = [
     mapURI: earth,
   },
   {
-    name: 'mars',
+    name: 'Марс',
     orbitRate: 2.5,
     rotationRate: 0.02,
     distanceFromSun: 38,
@@ -45,7 +45,7 @@ const PLANETS = [
     mapURI: mars,
   },
   {
-    name: 'jupiter',
+    name: 'Юпитер',
     orbitRate: 2,
     rotationRate: 0.02,
     distanceFromSun: 60,
@@ -54,7 +54,7 @@ const PLANETS = [
     mapURI: jupiter,
   },
   {
-    name: 'saturn',
+    name: 'Сатурн',
     orbitRate: 1,
     rotationRate: 0.02,
     distanceFromSun: 75,
@@ -63,7 +63,7 @@ const PLANETS = [
     mapURI: saturn,
   },
   {
-    name: 'uranus',
+    name: 'Уран',
     orbitRate: 0.7,
     rotationRate: 0.02,
     distanceFromSun: 88,
@@ -72,7 +72,7 @@ const PLANETS = [
     mapURI: uranus,
   },
   {
-    name: 'neptune',
+    name: 'Нептун',
     orbitRate: 0.5,
     rotationRate: 0.02,
     distanceFromSun: 100,
