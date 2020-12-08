@@ -1,0 +1,30 @@
+@import "src/static/styles/vars";
+
+.settings {
+  color: $white;
+  height: 100%;
+
+  &__title {
+    font-size: 30px;
+    letter-spacing: 2px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  &__row {
+    display: flex;
+    margin: 10px 0;
+  }
+
+  &__setting-name {
+    flex: 1 auto;
+    display: flex;
+    align-items: center;
+  }
+
+  &__setting-actions {
+    display: flex;
+    flex: 100% 100%;
+    justify-self: flex-end;
+  }
+}
