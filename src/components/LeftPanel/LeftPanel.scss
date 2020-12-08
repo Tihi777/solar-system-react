@@ -1,0 +1,34 @@
+@import 'src/static/styles/vars';
+
+.left-panel {
+  position: absolute;
+  z-index: 30;
+  left: 0;
+  top: calc(50% - 250px);
+  height: 500px;
+  width: 350px;
+  padding-left: 10px;
+  display: flex;
+
+  &__container {
+    border-radius: 25px;
+    background: linear-gradient(160deg, $indigo, $pink 50%, $black 85%);
+    opacity: 0.75;
+    height: 100%;
+    width: 100%;
+    padding: 20px;
+  }
+
+  &__close-button {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(90deg, rgba($indigo, 0.1), rgba($pink, 0.7));
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    top: calc(50% - 20px);
+    right: -20px;
+  }
+}

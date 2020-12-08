@@ -1,0 +1,41 @@
+@import "./src/static/styles/vars";
+
+.planet-card {
+  position: absolute;
+  z-index: 30;
+  right: 0;
+  top: calc(50% - 100px);
+  width: 130px;
+  height: 200px;
+
+  &__planet {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__image {
+    height: 90px;
+    -webkit-user-drag: none;
+
+    &--saturn {
+      width: 120px;
+    }
+  }
+
+  &__container {
+    margin-right: 10px;
+    padding: 10px;
+    border-radius: 25px;
+    background: linear-gradient($indigo, $pink);
+  }
+
+  &__text {
+    text-align: center;
+    font-size: 14px;
+    color: $white;
+    margin: 3px 0;
+  }
+}
+
+

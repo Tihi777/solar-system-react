@@ -4,10 +4,9 @@ import { useLoader } from 'react-three-fiber';
 import { useDispatch, useSelector } from 'react-redux';
 
 import sun from '../../static/textures/sun.jpg';
+import OrbitActions from '../../store/actions/orbitActions';
 
 import Text from '../Text/Text';
-
-import OrbitActions from '../../store/actions/orbitActions';
 
 const Sun = ({ position, size, amountOfSegments }) => {
   const [hovered, setHover] = useState(false);
@@ -18,7 +17,7 @@ const Sun = ({ position, size, amountOfSegments }) => {
 
   const ref = useRef();
   const map = useLoader(TextureLoader, sun);
-  const name = 'sun';
+  const name = 'Солнце';
 
   useEffect(() => {
     setActive(activeObject === name);
