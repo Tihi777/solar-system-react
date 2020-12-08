@@ -27,7 +27,14 @@ const Planet = ({
   const [hovered, setHover] = useState(false);
   const [active, setActive] = useState(false);
 
-  const { runRotation, runOrbit, speedRate, activeObject } = useSelector(state => state.orbitState);
+  const {
+    runRotation,
+    runOrbit,
+    speedRate,
+    activeObject,
+    showOrbits,
+    showPlanetNames,
+  } = useSelector(state => state.orbitState);
 
   const planetRef = useRef();
   const dispatch = useDispatch();
@@ -94,11 +101,16 @@ const Planet = ({
         parent={planetRef}
         anchorY={size + 0.5}
         anchorX={name.length / 5}
-        opacity={(active || hovered) ? 1 : 0}
+        opacity={(active || hovered || showPlanetNames) ? 1 : 0}
       >
         {name}
       </Text>
-      <PlanetOrbit distanceFromSun={distanceFromSun} size={100} color={active ? '#5c3d8c' : '#ffffff'} />
+      <PlanetOrbit
+        distanceFromSun={distanceFromSun}
+        size={100}
+        color={active ? '#5c3d8c' : '#ffffff'}
+        opacity={showOrbits ? 1 : 0}
+      />
     </>
   );
 };

@@ -5,6 +5,8 @@ import { Slider } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
 import OrbitActions from '../../store/actions/orbitActions';
+import LeftPanelActions from '../../store/actions/leftPanelActions';
+import LeftPanelTypes from '../../constants/LeftPanelTypes';
 
 import { ReactComponent as ArrowUpSvg } from '../../static/svg/up-arrow.svg';
 import { ReactComponent as CloseSvg } from '../../static/svg/close.svg';
@@ -71,7 +73,10 @@ const SpeedControl = () => {
           />
         </div>
         <div className="speed-control__action speed-control__action--settings">
-          <SettingsSvg />
+          <SettingsSvg onClick={
+            () => dispatch(LeftPanelActions.openLeftPanel({ type: LeftPanelTypes.SETTINGS }))
+          }
+          />
         </div>
         <div className="speed-control__action">
           <CloseSvg onClick={() => setSpeedControlVisible(!speedControlVisible)} />
