@@ -14,6 +14,7 @@ import Loader from '../../components/Loader/Loader';
 import SpeedControl from '../../components/SpeedControl/SpeedControl';
 import PlanetCard from '../../components/PlanetCard/PlanetCard';
 import LeftPanel from '../../components/LeftPanel/LeftPanel';
+import Asteroids from '../../components/Asteroids/Asteroids';
 
 const SolarSystem = () => (
   <ReactReduxContext.Consumer>
@@ -23,10 +24,10 @@ const SolarSystem = () => (
         <SpeedControl />
         <PlanetCard />
         <LeftPanel />
-        <Canvas shadowMap camera={{ position: [120, 30, 0], fov: 70 }} colorManagement>
+        <Canvas camera={{ position: [150, 30, 0], fov: 70 }} colorManagement={false} shadowMap>
           <Suspense fallback={null}>
             <Provider store={store}>
-              <ambientLight intensity={0.3} color={0xaaaaaa} />
+              <ambientLight intensity={0.5} color={0xaaaaaa} />
               <pointLight position={[0, 0, 0]} intensity={2.5} color={0xffdcb4} />
               <Sun />
               {PLANETS.map(planet => (
@@ -42,6 +43,8 @@ const SolarSystem = () => (
                 />
               ))}
               <SkyBox />
+              <Asteroids amount={110} distanceFromSun={62} />
+              <Asteroids amount={240} distanceFromSun={160} />
               <OrbitControls maxDistance={1000} minDistance={10} />
             </Provider>
           </Suspense>

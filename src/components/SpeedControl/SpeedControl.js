@@ -30,7 +30,7 @@ const useStyles = makeStyles({
 
 const SpeedControl = () => {
   const [speedControlVisible, setSpeedControlVisible] = useState(false);
-  const [speed, setSpeed] = useState(0.1);
+  const [speed, setSpeed] = useState(1);
 
   const speedControlAnimation = useSpring({
     opacity: speedControlVisible ? 1 : 1,

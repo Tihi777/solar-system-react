@@ -14,6 +14,7 @@ import Jupiter from '../../static/images/jupiter.png';
 import Saturn from '../../static/images/saturn.png';
 import Uranus from '../../static/images/uranus.png';
 import Neptune from '../../static/images/neptune.png';
+import Pluto from '../../static/images/pluto.png';
 
 import './PlanetCard.scss';
 
@@ -30,6 +31,7 @@ const Images = {
   Сатурн: Saturn,
   Уран: Uranus,
   Нептун: Neptune,
+  Плутон: Pluto,
 };
 
 const PlanetCard = () => {

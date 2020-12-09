@@ -36,7 +36,7 @@ const Text = ({
   });
 
   return (
-    <mesh ref={textRef} position={[0, parent.current.position.y + anchorY, 0]}>
+    <mesh ref={textRef} position={[0, parent?.current?.position.y + anchorY, 0]}>
       <textGeometry args={[children, config]} />
       <meshPhongMaterial
         attach="material"
