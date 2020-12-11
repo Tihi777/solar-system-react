@@ -41,7 +41,7 @@ const Planet = ({
   const map = useLoader(TextureLoader, mapURI);
 
   useEffect(() => {
-    dispatch(PlanetActions.addPlanet(planetRef));
+    dispatch(PlanetActions.addPlanet(planetRef, name));
   }, []);
 
   useEffect(() => {
@@ -105,12 +105,13 @@ const Planet = ({
       >
         {name}
       </Text>
+      {showOrbits && (
       <PlanetOrbit
         distanceFromSun={distanceFromSun}
         size={100}
         color={active ? '#5c3d8c' : '#ffffff'}
-        opacity={showOrbits ? 1 : 0}
       />
+      )}
     </>
   );
 };

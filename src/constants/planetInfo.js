@@ -78,7 +78,7 @@ const PLANET_INFO = {
     },
     distanceFromSun: '780M км',
     rotationPeriod: '9 ч 55 мин',
-    rotationPeriodAroundSun: '11.9',
+    rotationPeriodAroundSun: '11.9 годы',
     gravity: '25',
     temperature: '-120',
     description: 'Юпитер - самя большая планета Солнечной cистемы, с массой в 2,5 раза большей, чем у всех остальных вместе взятых планет, и составляющая всего 0,001% массы Солнца.',
