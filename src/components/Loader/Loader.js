@@ -1,29 +1,30 @@
 import React from 'react';
-import { a, useTransition } from '@react-spring/web';
+import { useTransition, animated } from 'react-spring';
 import { useProgress } from 'drei';
 
 import './Loader.scss';
 
 const Loader = () => {
   const { active, progress } = useProgress();
-  const transition = useTransition(active, {
-    from: { opacity: 1, progress: 0 },
+  const transition = useTransition(active, null, {
+    from: { opacity: 1 },
     leave: { opacity: 0 },
-    update: { progress },
   });
   const getWidth = () => progress * 3.5;
 
-  return transition(
-    ({ progress, opacity }, active) => active && (
-      <a.div className="loader-bar" style={{ opacity }}>
-        <div className="loader-bar__container">
-          <a.div className="loader-bar__slider" style={{ width: getWidth() }}>
-            <a.span className="loader-bar__data">{progress.to(p => `${p.toFixed(2)}%`)}</a.span>
-          </a.div>
-        </div>
-      </a.div>
-    ),
-  );
+  return transition.map(({ item, key, props }) => (
+    item && (
+    <animated.div className="loader-bar" key={key} style={props}>
+      <div className="loader-bar__container">
+        <animated.div className="loader-bar__slider" style={{ width: getWidth() }}>
+          <animated.span className="loader-bar__data">
+            {`${progress.toFixed(2)}%`}
+          </animated.span>
+        </animated.div>
+      </div>
+    </animated.div>
+    )
+  ));
 };
 
 export default Loader;

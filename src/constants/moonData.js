@@ -5,7 +5,7 @@ import deimos from '../static/textures/deimos.jpg';
 const MOONS = [
   {
     name: 'moon',
-    planetIndex: 2,
+    planetName: 'Земля',
     orbitRate: 9,
     rotationRate: 0.1,
     distanceFromSun: 4,
@@ -15,7 +15,7 @@ const MOONS = [
   },
   {
     name: 'phobos',
-    planetIndex: 3,
+    planetName: 'Марс',
     orbitRate: 10,
     rotationRate: 0.1,
     distanceFromSun: 2,
@@ -25,7 +25,7 @@ const MOONS = [
   },
   {
     name: 'deimos',
-    planetIndex: 3,
+    planetName: 'Марс',
     orbitRate: 8,
     rotationRate: 0.1,
     distanceFromSun: 2.8,

@@ -7,8 +7,7 @@ let moonPositionIndex = 0;
 
 const Moon = ({
   moonData: {
-    name,
-    planetIndex,
+    planetName,
     rotationRate,
     orbitRate,
     distanceFromSun,
@@ -21,7 +20,7 @@ const Moon = ({
   const { runRotation, runOrbit, speedRate } = useSelector(state => state.orbitState);
   const planets = useSelector(state => state.planets);
   const map = useLoader(TextureLoader, mapURI);
-  const planetRef = planets[planetIndex];
+  const planetRef = planets[planetName];
 
   useFrame(() => {
     if (runRotation) {

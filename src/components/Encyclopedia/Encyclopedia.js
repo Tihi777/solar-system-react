@@ -35,7 +35,7 @@ const Encyclopedia = ({ planet }) => {
             </div>
           </div>
           <div className="encyclopedia__row">
-            <div className="encyclopedia__cell">Растояние от солнца</div>
+            <div className="encyclopedia__cell">{`Растояние от ${planet === 'Солнце' ? 'центра галактики' : 'Солнца'}`}</div>
             <div className="encyclopedia__cell encyclopedia__cell--black">{planetInfo.distanceFromSun}</div>
           </div>
           <div className="encyclopedia__row">
@@ -43,7 +43,7 @@ const Encyclopedia = ({ planet }) => {
             <div className="encyclopedia__cell encyclopedia__cell--black">{planetInfo.rotationPeriod}</div>
           </div>
           <div className="encyclopedia__row">
-            <div className="encyclopedia__cell">Период вращения вокруг солнца</div>
+            <div className="encyclopedia__cell">{`Период вращения вокруг ${planet === 'Солнце' ? 'центра галактики' : 'Солнца'}`}</div>
             <div className="encyclopedia__cell encyclopedia__cell--black">{planetInfo.rotationPeriodAroundSun}</div>
           </div>
           <div className="encyclopedia__row">
