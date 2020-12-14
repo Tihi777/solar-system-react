@@ -4,7 +4,7 @@ This project was developed as a Term paper on discipline Computer graphics.
 
 Open the [application](https://solar-system-tusur.web.app/) to view it in the browser.
 
-![Solar System](https://github.com/Tihi777/solar-system-react/...)
+![Solar System](https://github.com/Tihi777/solar-system-react/raw/develop/src/static/images/Preview.png)
 
 ## Available Scripts
 
